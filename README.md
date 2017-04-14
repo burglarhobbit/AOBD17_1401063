@@ -6,7 +6,10 @@
 	
    2. A Novel Incremental Principal Component Analysis and it's Application for Face Recognition <br/>
       [Novel Incremental PCA Research Paper](http://www.cse.ust.hk/faculty/jamesk/papers/tsmc06.pdf)
-
+   3. Streaming K-medians clustering <br/>
+      [k-medians clustering Research Paper](https://pdfs.semanticscholar.org/aa00/93b9327b41790813704eec4d195ac7415d04.pdf)
+   4. Incremental Linear Discriminant Analysus <br/>
+      [ILDA Research Paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.97.2863&rep=rep1&type=pdf)
 * Submission 1: Robust Principal Component Analysis? <br/>
   [RPCA Research Paper](https://statweb.stanford.edu/~candes/papers/RobustPCA.pdf)
 * Submission 2: Probabilistic PCA vs Robust PCA <br/>

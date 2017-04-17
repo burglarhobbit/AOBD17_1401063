@@ -8,14 +8,27 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 
 def find_k_representatives(darray,k):
-    dist = []
-    for i in darray:
-        m_array = darray[:] - i
-        dist.append(norm(m_array))
-    dist = array(dist)
-    argsort_dist = argsort(dist)
-    first_k = darray[argsort_dist][:k]
-    return first_k.reshape(k,2)
+    kmeans = KMeans(n_clusters=k).fit(darray)
+    means = array(kmeans.cluster_centers_)
+    #print "Means\n",means.shape
+    print "Means\n",means
+    dist = darray - means[0]
+    dist = dist.dot(dist.T)
+    argsort_dist = argsort(diag(dist))
+    median_centers = darray[argsort_dist][0]
+    #print median_centers
+    for i in range(1,k):
+        dist = darray - means[i]
+        dist = dist.dot(dist.T)
+        print diag(dist)
+        argsort_dist = argsort(diag(dist))
+        median = darray[argsort_dist][0]
+        #print median
+        median_centers = concatenate((median_centers,median),axis=0)
+        #print median_centers
+    print "returning"
+    return median_centers.reshape(k,2)
+
 
 dim = 2 # point dimensions
 datapoints = 3010
@@ -84,7 +97,7 @@ print "LOOP BREAKED"
 print init_levels
 print memory[levels-2].shape
 final_cluster = memory[0]
-for i in range(1,levels):
+for i in range(1,levels-1):
     if memory[i] is not None:
         final_cluster = append(final_cluster,memory[i],axis=0)
 print final_cluster.shape
@@ -93,4 +106,4 @@ print k_reps.shape
 plt.clf()
 plt.plot(X[:,0],X[:,1],'yo')
 plt.plot(k_reps[:,0],k_reps[:,1],'ks',ms=7)
-plt.pause(100)
+plt.pause(200)

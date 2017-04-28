@@ -15,4 +15,4 @@
 * Submission 2: Probabilistic PCA vs Robust PCA <br/>
   [PPCA Research Paper](https://www.microsoft.com/en-us/research/publication/probabilistic-principal-component-analysis/)
 * Submission 3: Deep Neural Network, an implementation <br/>
-* Final Submission: Deep Convolutional Generative Adversarial Network, an implementation in FER2013 and MNIST training set<br/>
+* Submission 4: Final ML-AOBD Submission, Deep Convolutional Generative Adversarial Network, an implementation in FER2013 and MNIST training set<br/>

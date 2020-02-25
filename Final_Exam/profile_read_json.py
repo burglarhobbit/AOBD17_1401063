@@ -80,9 +80,10 @@ def get_model():
             json_file.write(unicode(json.dumps(json_data)))
             json_file.truncate()
 
+    min_skill_occurrence = 25
     #pruned_skillset = {}
     for i in skillset.keys():
-        if skillset[i] > 15:
+        if skillset[i] > min_skill_occurrence:
             #print i,skillset[i]
             pass
         else:
